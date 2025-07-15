@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Barbara The Mag</title>
+
+  <!-- Load jQuery from CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Load Turn.js from your local js/ folder -->
+  <script src="js/turn.min.js"></script>
+
+  <style>
+    body {
+      background: #EDE8D0;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    #flipbook {
+      width: 800px;
+      height: 600px;
+      margin: 25px auto;
+    }
+
+    #flipbook .page {
+      width: 540px;
+      height: 734px;
+      background-color: white;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="flipbook">
+    <div class="page" style="background-image: url('pages/page1.png');"></div>
+    <div class="page" style="background-image: url('pages/page2.png');"></div>
+    <div class="page" style="background-image: url('pages/page3.png');"></div>
+    <div class="page" style="background-image: url('pages/page4.png');"></div>
+    <!-- Add more pages as needed -->
+  </div>
+
+  <script>
+    $('#flipbook').turn({
+      width: 1080,
+      height: 734,
+      autoCenter: true
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+

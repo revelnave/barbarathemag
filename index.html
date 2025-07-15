@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbara The Mag</title>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Turn.js -->
+  <script src="js/turn.min.js"></script>
+
+  <style>
+    body {
+      background: #FFFF81;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    .flipbook-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    #flipbook {
+      width: 100%;
+    }
+
+    #flipbook .page {
+      width: 540px;
+      height: 734px;
+      background-color: #FFFF81;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flipbook-container">
+    <div id="flipbook">
+      <div class="page" style="background-image: url('pages/page1.png');"></div>
+      <div class="page" style="background-image: url('pages/page2.png');"></div>
+      <div class="page" style="background-image: url('pages/page3.png');"></div>
+      <div class="page" style="background-image: url('pages/page4.png');"></div>
+      <!-- Add more pages as needed -->
+    </div>
+  </div>
+
+  <script>
+    function setupFlipbook() {
+      const containerWidth = window.innerWidth;
+      const isMobile = containerWidth < 768;
+
+      const displayMode = isMobile ? 'single' : 'double';
+      const bookWidth = isMobile ? 540 : 1080;
+      const bookHeight = 734;
+
+      // Recreate the flipbook if it already exists
+      if ($('#flipbook').data('turn')) {
+        $('#flipbook').turn('destroy').remove();
+        $('.flipbook-container').append(`<div id="flipbook">
+          <div class="page" style="background-image: url('pages/page1.png');"></div>
+          <div class="page" style="background-image: url('pages/page2.png');"></div>
+          <div class="page" style="background-image: url('pages/page3.png');"></div>
+          <div class="page" style="background-image: url('pages/page4.png');"></div>
+        </div>`);
+      }
+
+      $('#flipbook').turn({
+        width: bookWidth,
+        height: bookHeight,
+        autoCenter: true,
+        display: displayMode
+      });
+    }
+
+    $(document).ready(function () {
+      setupFlipbook();
+      $(window).on('resize', function () {
+        clearTimeout(window._resizeTimer);
+        window._resizeTimer = setTimeout(setupFlipbook, 200);
+      });
+    });
+  </script>
+
+</body>
+</html>

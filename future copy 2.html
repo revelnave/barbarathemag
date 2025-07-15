@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B.A.R.B.I.E. Chatbot</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffd6f6, #c9e4ff);
+      color: #4b0082;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px #ff6ec7;
+    }
+
+    #chatbox {
+      width: 100%;
+      max-width: 500px;
+      height: 400px;
+      background-color: white;
+      border: 2px solid #ff6ec7;
+      border-radius: 10px;
+      padding: 10px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      box-shadow: 0 0 10px #ff6ec7;
+    }
+
+    .message {
+      margin: 5px 0;
+    }
+
+    .barbie {
+      color: #ff69b4;
+      font-weight: bold;
+    }
+
+    .user {
+      color: #4b0082;
+      font-weight: bold;
+    }
+
+    #inputArea {
+      display: flex;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid #ff6ec7;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ff6ec7;
+      border: none;
+      color: white;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff4fbf;
+    }
+
+    #gameArea {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff0f9;
+      border: 2px dashed #ff6ec7;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 0 10px #ff6ec7;
+    }
+
+    #sparkleButton {
+      padding: 10px 15px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      background: #ffb3ec;
+      color: #4b0082;
+      cursor: pointer;
+    }
+
+    #sparkleButton:hover {
+      background: #ff8edf;
+    }
+
+    #shopArea, #quizArea {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff0f9;
+      border: 2px dashed #ff6ec7;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 0 10px #ff6ec7;
+    }
+  </style>
+</head>
+<body>
+  <h1>B.A.R.B.I.E. Chatbot</h1>
+  <div id="chatbox"></div>
+  <div id="inputArea">
+    <input type="text" id="userInput" placeholder="Type your glam question here..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <div id="gameArea">
+    <h2>✨ Sparkle Clicker ✨</h2>
+    <p>Click to collect sparkle power!</p>
+    <p><strong>Sparkles:</strong> <span id="sparkleCount">0</span></p>
+    <button id="sparkleButton" onclick="addSparkle()">Click me!</button>
+  </div>
+
+  <div id="shopArea">
+    <h2>🛍 The Sparkle Shop</h2>
+    <p>Spend sparkles on glam goodies!</p>
+    <button onclick="buyItem('Lip Gloss', 10)">💄 Lip Gloss (10 Sparkles)</button>
+    <button onclick="buyItem('Glitter Boots', 20)">👢 Glitter Boots (20 Sparkles)</button>
+    <button onclick="buyItem('Dream Convertible', 50)">🚗 Dream Convertible (50 Sparkles)</button>
+    <ul id="inventory"></ul>
+  </div>
+
+  <div id="quizArea">
+    <h2>💅 What Kind of Barbie Are You?</h2>
+    <p>Pick a color:</p>
+    <button onclick="setBarbie('Pink')">Pink</button>
+    <button onclick="setBarbie('Gold')">Gold</button>
+    <button onclick="setBarbie('Rainbow')">Rainbow</button>
+    <p id="quizResult"></p>
+  </div>
+
+  <script>
+    const chatbox = document.getElementById('chatbox');
+    let sparkles = 0;
+    let inventory = [];
+
+    function addMessage(sender, text) {
+      const msg = document.createElement('div');
+      msg.classList.add('message');
+      msg.innerHTML = `<span class="${sender}">${sender === 'barbie' ? 'B.A.R.B.I.E.' : 'You'}:</span> ${text}`;
+      chatbox.appendChild(msg);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    function sendMessage() {
+      const input = document.getElementById('userInput');
+      const userText = input.value.trim();
+      if (userText === '') return;
+
+      addMessage('user', userText);
+      input.value = '';
+
+      setTimeout(() => {
+        const reply = getBarbieReply(userText);
+        addMessage('barbie', reply);
+      }, 500);
+    }
+
+    function getBarbieReply(text) {
+      const lower = text.toLowerCase();
+
+      if (lower.includes('fashion') || lower.includes('outfit') || lower.includes('style'))
+        return "Darling, fashion is my power source. Think pink, then add glitter.";
+      if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey') || lower.includes('yo'))
+        return "Hi there! Ready to sparkle with some digital glam?";
+      if (lower.includes('who are you') || lower.includes('what is your name'))
+        return "I’m B.A.R.B.I.E., your Binary Artificial Response Bot with Infinite Elegance.";
+      if (lower.includes('advice') || lower.includes('help') || lower.includes('suggestion'))
+        return "Always match your outfit to your mood and never underestimate a good scrunchie.";
+      if (lower.includes('bye') || lower.includes('see you') || lower.includes('later'))
+        return "Logging off with love and lip gloss. Talk soon!";
+      if (lower.includes('love') || lower.includes('dating') || lower.includes('crush'))
+        return "Relationships come and go, but your sparkle is forever.";
+      if (lower.includes('dream') || lower.includes('goal') || lower.includes('ambition'))
+        return "Dream big, babe. The sky isn't even a limit if you're in heels.";
+      if (lower.includes('barbie'))
+        return "That’s me! And yes, I *do* wake up looking like this.";
+      if (lower.includes('ken'))
+        return "Ken is off finding himself... again. I’m still fabulous.";
+
+      return "That’s so interesting! Tell me more while I adjust my holographic eyeliner.";
+    }
+
+    function addSparkle() {
+      sparkles++;
+      document.getElementById('sparkleCount').innerText = sparkles;
+    }
+
+    function buyItem(item, cost) {
+      if (sparkles >= cost) {
+        sparkles -= cost;
+        document.getElementById('sparkleCount').innerText = sparkles;
+        inventory.push(item);
+        updateInventory();
+        alert(`You bought ${item}!`);
+      } else {
+        alert("Not enough sparkles, bestie!");
+      }
+    }
+
+    function updateInventory() {
+      const list = document.getElementById('inventory');
+      list.innerHTML = '';
+      inventory.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        list.appendChild(li);
+      });
+    }
+
+    function setBarbie(choice) {
+      let result = '';
+      if (choice === 'Pink') result = "You're Classic Glam Barbie – timeless, iconic, fabulous.";
+      if (choice === 'Gold') result = "You're Golden Hour Barbie – radiant, powerful, and slightly mysterious.";
+      if (choice === 'Rainbow') result = "You're Dreamland Barbie – imaginative, bold, and a total vibe.";
+      document.getElementById('quizResult').innerText = result;
+    }
+  </script>
+</body>
+</html>

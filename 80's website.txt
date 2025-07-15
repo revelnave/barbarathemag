@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbara The Mag</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff6ec4, #7873f5);
+      font-family: 'Press Start 2P', cursive;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+      color: #ff6ec4;
+      border-bottom: 5px solid #ff6ec4;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background: #1a1a1a;
+      padding: 15px;
+      font-size: 12px;
+      text-transform: uppercase;
+      border-bottom: 3px dashed #fff;
+    }
+
+    nav a {
+      color: #00ffe5;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #ffff81;
+    }
+
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #ffff81;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px #000;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: #000000aa;
+      border: 2px solid #ffff81;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 0 15px #00ffe5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      border-top: 5px solid #00ffe5;
+      font-size: 10px;
+    }
+
+    .news-ticker {
+      background: #000;
+      color: #00ffe5;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      border-top: 3px dashed #ffff81;
+      padding: 10px 0;
+    }
+
+    .news-ticker p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BARBARA THE MAG</h1>
+    <p>Plastic. Fantastic. Monthly.</p>
+  </header>
+
+  <nav>
+    <a href="#latest">Latest</a>
+    <a href="#features">Features</a>
+    <a href="#horoscope">Horoscope</a>
+    <a href="#subscribe">Subscribe</a>
+  </nav>
+
+  <div class="news-ticker">
+    <p>BREAKING: City Style Barbie returns from archival slumber... Barbie seen brunching in bubblegum pink... New issue dropping soon!</p>
+  </div>
+
+  <section class="section" id="latest">
+    <h2>Latest Issue Highlights</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Barbie Goes Paris</h3>
+        <p>La vie en rose with shoulder pads and sass. Full interview inside.</p>
+      </div>
+      <div class="card">
+        <h3>Ken’s Closet</h3>
+        <p>Velcro wallets, mesh tank tops, and dreams of a mixtape career.</p>
+      </div>
+      <div class="card">
+        <h3>To Box or Unbox?</h3>
+        <p>The philosophical dilemma of staying mint vs. living free.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <h2>Exclusive Features</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Editor’s Letter</h3>
+        <p>Barbie gets real about static hair, stiletto fatigue, and why she still believes in love.</p>
+      </div>
+      <div class="card">
+        <h3>Barbara’s Picks</h3>
+        <p>The best pinks, prints, and power poses of the season.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="horoscope">
+    <h2>BarbieScope</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Gemini</h3>
+        <p>You’re two dolls in one. Embrace the outfit change. Avoid Libras with glitter envy.</p>
+      </div>
+      <div class="card">
+        <h3>Leo</h3>
+        <p>Your mane is big. Your energy is bigger. Let no one dull your sparkle — unless it’s Skipper.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="subscribe">
+    <h2>Subscribe Now</h2>
+    <p>Join the Barbara Club and never miss an issue. Plus: stickers, posters, and exclusive Barbie hotline access.</p>
+    <button style="margin-top: 20px; font-family: 'Press Start 2P', cursive; padding: 10px 20px; background: #ff6ec4; border: none; color: #000; font-size: 12px; cursor: pointer;">JOIN THE CLUB</button>
+  </section>
+
+  <footer>
+    &copy; 1989–2025 Barbara the Mag. All plastic rights reserved.
+  </footer>
+</body>
+</html>

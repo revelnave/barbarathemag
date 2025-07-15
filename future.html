@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barbara 3000</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(ellipse at top, #0f0c29, #302b63, #24243e);
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffe7;
+      overflow-x: hidden;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      padding: 40px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid #00ffe7;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #00ffe7;
+      text-transform: uppercase;
+      font-size: 14px;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 0.3s;
+    }
+
+    nav a:hover {
+      border-bottom: 2px solid #00ffe7;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: linear-gradient(135deg, #111, #333);
+      color: white;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin: 0;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 20px auto 0;
+      font-size: 16px;
+      color: #aaa;
+    }
+
+    .section {
+      padding: 60px 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border-top: 1px solid rgba(0, 255, 231, 0.1);
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid #00ffe7;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .card h3 {
+      color: #fff;
+      margin-top: 0;
+    }
+
+    .card p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 30px;
+      color: #00ffe7;
+      font-size: 12px;
+    }
+
+    .neon-glow {
+      text-shadow: 0 0 5px #00ffe7, 0 0 10px #00ffe7, 0 0 20px #00ffe7;
+    }
+
+    .scanlines {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.02) 0px,
+        rgba(255, 255, 255, 0.02) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+      pointer-events: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <div class="scanlines"></div>
+  <header>
+    <h1 class="neon-glow">BARBARA 3000</h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#hologram">Holograms</a>
+      <a href="#fashion">NanoFashion</a>
+      <a href="#subscribe">Upload Your Sub</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2 class="neon-glow">Holographic. HyperReal. Hella Hot.</h2>
+    <p>Welcome to the future of femininity, fluidity, and fashion. Tap in, log on, glam out.</p>
+  </section>
+
+  <section class="section" id="features">
+    <h2 class="neon-glow">Features</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Botox but Make it Quantum</h3>
+        <p>Injectable charm that reverses time *and* judgment.</p>
+      </div>
+      <div class="card">
+        <h3>BarbieNet 7.0</h3>
+        <p>Connect with over 8 trillion avatars in our VR tea garden.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="hologram">
+    <h2 class="neon-glow">Barbara Beams In</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>3D Ken Download Pack</h3>
+        <p>Choose your Ken: Poet, Pilot, or Programmable Companion.</p>
+      </div>
+      <div class="card">
+        <h3>Hologlam Editor</h3>
+        <p>Customize your reflection in our photonic mirror pool.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="fashion">
+    <h2 class="neon-glow">NanoFashion Drop</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Neon Weave Skirt</h3>
+        <p>Changes color with your mood, AI, or the gossip in your group chat.</p>
+      </div>
+      <div class="card">
+        <h3>Hover Heels</h3>
+        <p>Float 5cm off the ground, just like your standards.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="subscribe">
+    <h2 class="neon-glow">Upload Your Sub</h2>
+    <p style="text-align:center; max-width:500px; margin: 0 auto;">Receive our mag telepathically or via lunar beam. All subscribers receive a free anti-grav tote and laser lip balm.</p>
+  </section>
+
+  <footer>
+    &copy; 3000 BARBARA CORP. Powered by SparkleDrive and Universal Sass Protocol.
+  </footer>
+</body>
+</html>

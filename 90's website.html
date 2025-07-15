@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbara The Mag</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Yeseva+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      font-family: 'Quicksand', sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #fff;
+      padding: 30px;
+      text-align: center;
+      color: #ff4d88;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-family: 'Yeseva One', cursive;
+      font-size: 36px;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background: #fff0f5;
+      padding: 15px;
+      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    nav a {
+      color: #cc3366;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #cc3366;
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .section:nth-child(even) {
+      background: #fffafc;
+    }
+
+    .section h2 {
+      color: #cc3366;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: #fdf0f5;
+      border: 2px dashed #cc3366;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 5px 5px #ffb6c1;
+      text-align: left;
+    }
+
+    .card h3 {
+      color: #cc3366;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #fff0f5;
+      font-size: 12px;
+      color: #cc3366;
+    }
+
+    .news-ticker {
+      background: #fff0f5;
+      color: #cc3366;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      padding: 12px 0;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .news-ticker p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 20s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #ff4d88;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 25px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #cc3366;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BARBARA THE MAG</h1>
+    <p>Pretty. Pink. Print. Serving lewks since 1994.</p>
+  </header>
+
+  <nav>
+    <a href="#latest">Latest</a>
+    <a href="#features">Features</a>
+    <a href="#horoscope">Barbiescope</a>
+    <a href="#subscribe">Subscribe</a>
+  </nav>
+
+  <div class="news-ticker">
+    <p>Ugh, as if! Clueless Barbie debuts plaid comeback... Ken drops skincare collab... Barbie Hotline back online, press 2 for gossip!</p>
+  </div>
+
+  <section class="section" id="latest">
+    <h2>Latest Issue Highlights</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Back 2 School</h3>
+        <p>Pastel backpacks, platform sneakers, and fuzzy pens. Barbie’s 90s campus looks are in session.</p>
+      </div>
+      <div class="card">
+        <h3>Ken’s Mixtape</h3>
+        <p>The summer jam that’s somehow all Smash Mouth and no shame. Bonus: Lisa Frank liner notes.</p>
+      </div>
+      <div class="card">
+        <h3>Totally Unboxed</h3>
+        <p>Living outside the plastic. Is Barbie ready for real life, or at least the food court?</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <h2>Feature Stories</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Dear Diary</h3>
+        <p>Barbie spills tea in glitter gel pen. Love, drama, fashion, and who stole her lipgloss.</p>
+      </div>
+      <div class="card">
+        <h3>Style Files</h3>
+        <p>Bucket hats. Checkered skirts. Butterfly clips. Clueless, but make it Barbie.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="horoscope">
+    <h2>Barbiescope</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Aquarius</h3>
+        <p>You’re vibing with holographic stickers and spiritual beepers. Channel the chaos.</p>
+      </div>
+      <div class="card">
+        <h3>Virgo</h3>
+        <p>Your organizer is full, your mood ring is green, and your vibe is unmatched. Don’t let Skipper copy your homework.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="subscribe">
+    <h2>Subscribe, Duh</h2>
+    <p>Join the cool club and get Barbara delivered to your pastel mailbox monthly. Includes: stickers, quizzes, and free scrunchie!</p>
+    <button>JOIN NOW</button>
+  </section>
+
+  <footer>
+    &copy; 1994–2025 Barbara the Mag. Printed with love and glitter.
+  </footer>
+</body>
+</html>

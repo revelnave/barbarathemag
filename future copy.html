@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BARBARA: DREAMCORE</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&family=Unbounded:wght@700&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Unbounded', sans-serif;
+      background: linear-gradient(135deg, #f9f8fc, #fbe3ff);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ffc0cb, #e0b3ff);
+      padding: 40px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+      letter-spacing: 1px;
+      color: #fff;
+      text-shadow: 2px 2px 0 #ff90b3;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1518756131217-31eb79b20e8f?fit=crop&w=1500&q=80') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .section {
+      padding: 60px 20px;
+      background: white;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #e066ff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #ffe3f0, #f9e3ff);
+      border: 2px solid #f0c0ff;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      color: #d82eff;
+      margin-top: 0;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .ticker {
+      background: #d82eff;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      animation: tickerScroll 20s linear infinite;
+    }
+
+    @keyframes tickerScroll {
+      0% {transform: translateX(100%);}
+      100% {transform: translateX(-100%);}
+    }
+
+    footer {
+      background: #222;
+      text-align: center;
+      padding: 40px 20px;
+      color: #ccc;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BARBARA: DREAMCORE</h1>
+    <nav>
+      <a href="#news">Latest</a>
+      <a href="#dreams">Dreams</a>
+      <a href="#read">Read</a>
+      <a href="#subscribe">Subscribe</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Enter the pixelated dimension of pastel rebellion and dream-logic couture.</h2>
+  </section>
+
+  <div class="ticker">✨ New issue now shipping! ✨ Dream Barbie wins 3rd Best Dressed in all dimensions ✨ Vote for your fave hologram ✨</div>
+
+  <section class="section" id="news">
+    <h2>Fresh from the Fabric of Space-Time</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Y2K Crystal Mesh Rebellion</h3>
+        <p>A shimmering counterattack on dull design. Everything is chrome and chaotic.</p>
+      </div>
+      <div class="card">
+        <h3>Poly Pocket Renaissance</h3>
+        <p>Small spaces. Big drama. Living in a locket is back and more passive-aggressive than ever.</p>
+      </div>
+      <div class="card">
+        <h3>Lisa Frank Surveillance State</h3>
+        <p>They're watching, but with unicorn stickers. Pastel paranoia at its cutest.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="dreams">
+    <h2>Latest Dream Segments</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>The Floating Mall</h3>
+        <p>Spend your dreams shopping on an infinite cloud where sale signs whisper your name.</p>
+      </div>
+      <div class="card">
+        <h3>Sleepover Orbit</h3>
+        <p>Zero gravity fashion shows with constellation karaoke. No parents, just vibes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="read">
+    <h2>Read the Latest Glitches</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Barbie.txt</h3>
+        <p>Her source code is pink and password-protected. Discover her binary secrets now.</p>
+      </div>
+      <div class="card">
+        <h3>404: Ken Not Found</h3>
+        <p>He left a note in Comic Sans. Read the heartbreaking debug logs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="subscribe">
+    <h2>Subscribe</h2>
+    <p style="text-align:center; max-width:500px; margin: 0 auto;">Join our soft rebellion and receive bioluminescent zines printed on cloudstock. Members get dream loot drops monthly.</p>
+  </section>
+
+  <footer>
+    &copy; DreamCore Publishing 2049. All rights reserved. Sleep sweet, dream loud.
+  </footer>
+</body>
+</html>
